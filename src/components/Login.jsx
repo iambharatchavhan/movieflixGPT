@@ -4,28 +4,26 @@ import Header from './Header'
 
 const Login = () => {
   return (
-    <div>
+    <div className='bg-black border border-yellow-700 w-full h-screen'>
 <Header/>
-     <div className=''>
+    
+     <div className='flex justify-center items-center h-[100vh] border border-white' >
        
-       <img src={IMG_BG} alt="" srcset="" className='backdrop-brightness-95 bg-white/30' />
-       <div className='absolute w-full min-h-screen border-4 border-red-500 top-0 bg-black/50'>
-        <div className='border-2 border-blue-500 h-[100vh] flex justify-center items-center'>
-          <form action="" className='flex flex-col justify-around items-center border-2 border-blue-500 w-1/3 h-[90vh]'>
-           <div className='flex flex-col gap-4 justify-start items-center'>
-           <h1 className='text-4xl font-semibold text-white'>Sign In</h1>
-            <input type="text" placeholder='Email or phone number'/>
-            <input type="password" placeholder='Password' className='w-'/> 
-            <input type="submit" value="Sign In"/> 
+       <img src={IMG_BG} alt="" srcset="" className='hidden backdrop-brightness-95 bg-white/30' />
+       <div className='absolute top-12 h-full'>
+        <div className=' h-full w-screen'>
+        <h1 className='text-3xl font-semibold text-white mt-5 ml-4'>Sign In</h1>
+          <form action="" className=' h-full flex flex-col justify-start items-center mt-5'>
+           <div className='border border-blue-700 h-2/3 flex flex-col w-full items-center gap-3 p-4'>
+            <input type="text" placeholder='Email or phone number' className='p-3 w-full rounded-sm bg-[#333333]'/>
+            <input type="password" placeholder='Password' className='p-3 w-full rounded-sm bg-[#333333]'/> 
+            <input type="submit" value="Sign In" className='text-white p-3 w-full rounded-md bg-[#E50914] mt-5'/> 
            </div>
-            <div>
+            <div  className='text-white'>
              <label htmlFor="remember">Remember me</label> <input type="checkbox" name='remember'/>
              <a href="www.google.com">Need help ?</a>
             </div>
           </form>
-        </div>
-        <div className='absolute w-full border-4 border-blue-500 bottom-0'>
-          Footer
         </div>
        </div>
      </div>
