@@ -1,44 +1,57 @@
-import React from 'react'
-import { IMG_BG } from '../Assets/constants'
-import Header from './Header'
+import React from "react";
+import { IMG_BG } from "../Assets/constants";
+import Header from "./Header";
 
 const Login = () => {
   return (
-    <div className='bg-black  w-full h-screen'>
-<Header/>
-    
-     <div className='flex justify-center items-center h-[100vh]' >
-       
-       <img src={IMG_BG} alt="" srcset="" className='hidden backdrop-brightness-95 bg-white/30' />
-       <div className='absolute top-12 h-full'>
-        <div className=' h-full w-screen'>
-        <h1 className='text-[1.9rem] font-bold text-white mt-3 ml-4'>Sign In</h1>
-          <form action="" className=' h-full flex flex-col justify-start items-center mt-5'>
-           <div className=' h-2/1 flex flex-col w-full items-center gap-4 p-4'>
-            <input type="text" placeholder='Email or phone number' className='p-3.5 w-full rounded-md bg-[#333333]'/>
-            <input type="password" placeholder='Password' className='p-3.5 w-full rounded-md bg-[#333333]'/> 
-            <button className='text-white font-bold p-3.5 w-full rounded-md bg-[#E50914] mt-5'>Sign In</button>
-           </div>
-            <div  className='text-white w-full flex justify-between px-4'>
-              <div className=''>
-             <label htmlFor="remember">Remember me</label> <input type="checkbox" name='remember'/>
+    <div className="bg-black text-white w-full h-screen ">
+      <Header />
+      <div className="flex justify-center items-center h-full ">
+        <div className=" flex flex-col w-full h-[80%] gap-4 p-2">
+          {/* the heading text */}
+          <div className="p-2">
+            <h1 className="text-3xl font-bold">Sign In</h1>
+          </div>
+          {/* the heading text */}
 
+          {/* form for sing in  */}
+          <form
+            action=""
+            className="flex flex-col justify-center items-center gap-4 p-2"
+          >
+            <input
+              type="text"
+              placeholder="Email or phone number"
+              className="p-3 w-full rounded-sm bg-[#333333] placeholder:text-[#d8d8d850]"
+            />
+            <input
+              type="text"
+              placeholder="Password"
+              className="p-3 w-full rounded-sm bg-[#333333] placeholder:text-[#d8d8d850]"
+            />
+
+            <button className="p-3 w-full rounded-sm bg-[#E50914] font-bold mt-4">
+              Sign in
+            </button>
+            <div className="w-full flex justify-between items-center ">
+              <div className="flex justify-center items-center">
+                <input type="checkBox" className="h-[1rem] w-4 text-center " />
+                <label htmlFor="" className="p-1 text-sm">Remember Me</label>
               </div>
               <div>
-             <a href="www.google.com" >Need help?</a>
-             
+                <a href="http://www.google.com" className="text-sm">Need help</a>
               </div>
-             
-
             </div>
-            <a href="www.google.com" className='text-white  w-full px-2 py-2 text-md'><span className='text-gray-400 px-2 '>New to Netflix?</span> Sign up now</a>
+            <div className="w-full">
+            <p className="text-[#aaaaaa]">New to NetFlix <span className="text-lg text-white"><a href="www.google.com" className="underline">Sing up now?</a></span></p>
+            <p className="text-[13px] mt-4 text-[#7a7a7a]">This page is protected by Google reCAPTCHA to ensure you're not a bot. <span className="text-blue-400"> <a href="/">Learn more.</a> </span></p>
+            </div>
           </form>
         </div>
-       </div>
-     </div>
+        {/* form for sing in  */}
+      </div>
     </div>
-  
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
