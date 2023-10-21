@@ -1,6 +1,7 @@
 import React,{useEffect} from 'react'
 import Login from './Login'
 import Brows from './Brows'
+import Error from './Error'
 import { createBrowserRouter,RouterProvider} from 'react-router-dom'
 import {onAuthStateChanged } from "firebase/auth";
 import {auth} from '../utils/firebase'
@@ -20,7 +21,11 @@ const Body = () => {
         {
             path:"/brows",
             element:<Brows/>
-        }
+        },
+        {
+          path:"/error",
+          element:<Error/>
+      }
     ])
 useEffect(()=>{
 

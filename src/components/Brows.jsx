@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import Header from './Header';
 import LogoutPopup from './LogoutPopup';
 import { UserCircle, ChevronDown } from 'lucide-react';
+import { useSelector } from "react-redux" 
 
 const Brows = () => {
-  const [isHovered, setIsHovered] = useState(false);
 
+  const [isHovered, setIsHovered] = useState(false);
+  const user = useSelector(store => store.user)
   
 
   return (
@@ -23,9 +25,9 @@ const Brows = () => {
         onMouseLeave={() => setIsHovered(false)}
 
       >
-        <div className="flex justify-center items-center gap-5 p-2 md:gap-2 ">
+        <div className="flex justify-center items-center gap-5 p-2 md:gap-2">
           <UserCircle strokeWidth={1} className="text-white text-sm md:text-xl" />
-          <p className="text-white flex justify-center items-center gap-1 hidden md:block">UserName</p>{' '}
+          <p className="text-white flex justify-center items-center gap-1 hidden md:block">{user?.displayName}</p>
           <ChevronDown strokeWidth={1} className='text-white' />
         </div>
         {isHovered && <LogoutPopup />}

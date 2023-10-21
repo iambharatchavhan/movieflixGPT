@@ -1,6 +1,5 @@
 import React from "react";
 import { IMG_LOGO } from "../Assets/constants";
-import {UserCircle} from "lucide-react"
 
 const Header = () => {
   return (

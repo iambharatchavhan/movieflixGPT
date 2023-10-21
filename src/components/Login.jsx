@@ -1,5 +1,9 @@
-import React, { useState, useRef} from "react";
-import { createUserWithEmailAndPassword ,signInWithEmailAndPassword} from "firebase/auth";
+import React, { useState, useRef } from "react";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
 import { IMG_BG } from "../Assets/constants";
 import Header from "./Header";
 import { checkValidate } from "../utils/validates";
@@ -12,7 +16,7 @@ const Login = () => {
   const email = useRef(null);
   const password = useRef(null);
   const username = useRef(null);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleToggleSignIn = () => {
     setIsSignIn(!isSignIn);
@@ -21,44 +25,63 @@ const Login = () => {
   const handleOnSignButton = () => {
     // console.log(email.current.value)
     // console.log(password.current.value)
-  
+
     let msg;
-  if (isSignIn) {
-    msg = checkValidate(email.current.value, password.current.value);
-    signInWithEmailAndPassword(auth,email.current.value, password.current.value)
-  .then((userCredential) => {
-    // Signed in 
-    const user = userCredential.user;
-    console.log(user);
-    navigate("/brows")
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    SetErrorMsg(errorCode + "-" + errorMessage)
-  });
+    if (isSignIn) {
+      msg = checkValidate(email.current.value, password.current.value);
+      signInWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          console.log(user);
+          navigate("/brows");
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          SetErrorMsg(errorCode + "-" + errorMessage);
+        });
+    } else {
+      msg = checkValidate(
+        email.current.value,
+        password.current.value,
+        username.current.value
+      );
 
-  } else {
-    msg = checkValidate(email.current.value, password.current.value, username.current.value);
-   
-    createUserWithEmailAndPassword(auth, email.current.value, password.current.value,)
-      .then((userCredential) => {
-        // Signed up 
-        const user = userCredential.user;
-        console.log(user)
-        navigate("/brows")
+      createUserWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          // Signed up
+          const user = userCredential.user;
+          updateProfile(user, {
+            displayName: username.current.value,
+            photoURL: "https://example.com/jane-q-user/profile.jpg",
+          })
+            .then(() => {
+              navigate("/brows");
+            })
+            .catch((error) => {
+              SetErrorMsg(errorMsg);
+            });
+          console.log(user);
 
-        // ...
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        SetErrorMsg(errorCode + "-" + errorMessage)
-        // ..
-      });
-
-  }
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          SetErrorMsg(errorCode + "-" + errorMessage);
+          // ..
+        });
+    }
     console.log(msg);
     SetErrorMsg(msg);
   };
@@ -95,8 +118,9 @@ const Login = () => {
             action=""
             className="flex flex-col justify-center items-center gap-4 p-2 relative"
           >
-            <p className="absolute -top-2  left-0 text-sm text-red-700">*{errorMsg}</p>
-
+            <p className="absolute -top-2  left-0 text-sm text-red-700">
+              *{errorMsg}
+            </p>
 
             {!isSignIn && (
               <input
@@ -121,8 +145,6 @@ const Login = () => {
               placeholder="Password"
               className="p-3 w-full rounded-sm bg-[#333333] placeholder:text-[#d8d8d850]"
             />
-
-          
 
             <button
               onClick={() => handleOnSignButton()}
