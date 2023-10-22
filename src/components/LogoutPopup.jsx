@@ -23,7 +23,7 @@ const LogoutPopup = () => {
   
   </div>
  
-  <div className='md:w-full md:flex md:justify-start items-center gap-2 p-2 text-white' onClick={handleSignOut} ><Power strokeWidth={1} /><p className='hidden md:block'>Logout</p></div>
+  <div className='items-center gap-2 p-2 cursor-pointer text-white md:w-full md:flex md:justify-start ' onClick={handleSignOut} ><Power strokeWidth={1} /><p className='hidden md:block'>Logout</p></div>
     </div>
   )
 }
