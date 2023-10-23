@@ -1,16 +1,16 @@
 import React, { useState, useRef } from "react";
+import { IMG_BG } from "../Assets/constants";
+import Header from "./Header";
+import { checkValidate } from "../utils/validates";
+import { auth } from "../utils/firebase";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import { IMG_BG } from "../Assets/constants";
-import Header from "./Header";
-import { checkValidate } from "../utils/validates";
-import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { addUser } from "../utils/userSlice";
+
 
 const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -18,7 +18,6 @@ const Login = () => {
   const email = useRef(null);
   const password = useRef(null);
   const username = useRef(null);
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleToggleSignIn = () => {
@@ -38,11 +37,7 @@ const Login = () => {
         password.current.value
       )
         .then((userCredential) => {
-          // Signed in
-         
           const user = userCredential.user;
-          console.log(user);
-          navigate("/brows");
           // ...
         })
         .catch((error) => {
@@ -67,19 +62,17 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: username.current.value,
-            photoURL: "https://example.com/jane-q-user/profile.jpg",
+            photoURL: "https://wallpapers.com/images/high/netflix-profile-pictures-1000-x-1000-2fg93funipvqfs9i.webp",
           })
             .then(() => {
-              const {uid,email,displayName} = auth.currentUser;
-     dispatch(addUser({uid:uid, email:email,displayName:displayName}) )
-              navigate("/brows");
+              const { uid, email, displayName,photoURL } = auth.currentUser;
+              dispatch(
+                addUser({ uid: uid, email: email, displayName: displayName ,photoURL:photoURL })
+              );
             })
             .catch((error) => {
               SetErrorMsg(errorMsg);
             });
-          console.log(user);
-
-          // ...
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -88,7 +81,7 @@ const Login = () => {
           // ..
         });
     }
-    console.log(msg);
+
     SetErrorMsg(msg);
   };
 
