@@ -1,0 +1,27 @@
+import React, { useEffect } from "react";
+import { API_OPTIONS } from "../utils/constant";
+import { useDispatch, useSelector } from "react-redux";
+import useMovieTrailer from "../utils/useMovieTrailer";
+
+const Trailer = ({ id }) => {
+  const dispatch = useDispatch();
+  const trailerKey = useSelector((store) => store?.movies?.movieTrailer?.key);
+  useMovieTrailer(id, API_OPTIONS);
+  // console.log(trailerKey);
+  
+  return (
+    <div className="text-white w-screen aspect-video overflow-hidden overflow-x-hidden">
+    
+      <iframe
+        className=" w-full aspect-video "
+       
+        src={"https://www.youtube.com/embed/" + trailerKey + "?autoplay=1&mute=1"}
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+       
+      ></iframe>
+    </div>
+  );
+};
+
+export default Trailer;

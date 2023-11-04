@@ -1,4 +1,4 @@
-export const API_OPTIONS = {
+export const API_OPTIONS ={
   method: 'GET',
   headers: {
     accept: 'application/json',
@@ -6,5 +6,9 @@ export const API_OPTIONS = {
   }
 };
 
-export const API_URL = "https://api.themoviedb.org/3/movie/now_playing?page=1";
+export const URL = 'https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1'
+export const API_URL = `${URL}` ;
 
+export const AVTAR = "https://wallpapers.com/images/high/netflix-profile-pictures-1000-x-1000-2fg93funipvqfs9i.webp"
+
+export const POSTER = "https://image.tmdb.org/t/p/w500/"

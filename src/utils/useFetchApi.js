@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
-const useApiFetch = (url) => {
+
+const useApiFetch = (url,options) => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -8,9 +9,9 @@ const useApiFetch = (url) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(url);
+        const response = await fetch(url,options);
         if (!response.ok) {
-          throw new Error("Something Went wrong");
+          throw new Error(`Something Went wrong" + ${url}`);
         }
         const jsonData = await response.json();
         setData(jsonData);
@@ -22,7 +23,7 @@ const useApiFetch = (url) => {
     };
 
     fetchData();
-  }, [url]);
+  }, [url,options]);
 
   return { data, isLoading, error };
 };

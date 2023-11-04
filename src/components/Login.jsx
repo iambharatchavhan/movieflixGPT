@@ -5,6 +5,7 @@ import { checkValidate } from "../utils/validates";
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { AVTAR } from "../utils/constant";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -62,7 +63,7 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: username.current.value,
-            photoURL: "https://wallpapers.com/images/high/netflix-profile-pictures-1000-x-1000-2fg93funipvqfs9i.webp",
+            photoURL: {AVTAR},
           })
             .then(() => {
               const { uid, email, displayName,photoURL } = auth.currentUser;

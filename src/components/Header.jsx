@@ -1,13 +1,19 @@
 import React,{useEffect,useState} from "react";
-import { IMG_LOGO } from "../Assets/constants";
-import {onAuthStateChanged } from "firebase/auth";
-import {auth} from '../utils/firebase'
 import {useDispatch} from "react-redux"
-import {addUser,removeUser} from "../utils/userSlice"
 import { useNavigate } from "react-router-dom";
-import LogoutPopup from './LogoutPopup';
 import { ChevronDown } from 'lucide-react';
 import { useSelector } from "react-redux";
+import LogoutPopup from './LogoutPopup';
+import {addUser,removeUser} from "../utils/userSlice"
+import {onAuthStateChanged } from "firebase/auth";
+import {auth} from '../utils/firebase'
+import { IMG_LOGO } from "../Assets/constants";
+
+
+
+
+
+
 
 
 const Header = () => {
@@ -19,8 +25,8 @@ const Header = () => {
   const Unsubscribe =  onAuthStateChanged(auth, (user) => {
     if (user) {
    
-      const {uid,email,displayName} = user;
-       dispatch(addUser({uid:uid, email:email,displayName:displayName}) )
+      const {uid,email,displayName,photoURL} = user;
+       dispatch(addUser({uid:uid, email:email,displayName:displayName,photoURL:photoURL}) )
        navigate("/brows")
     } else {
       // User is signed out
@@ -37,8 +43,8 @@ const Header = () => {
   const user = useSelector(store => store.user);
 
   const containerClass = isHovered
-    ? 'absolute z-50 right-5 top-2 flex flex-col justify-center items-center gap-4 p-1 rounded-xl bg-[#1c1c1c] w-[25%] h-42 cursor-pointer overflow-hidden md:w-[20%] md:top-4 lg:w-[12%]'
-    : 'absolute z-50 right-5 top-2 flex flex-col justify-center items-center gap-4 p-1 rounded-xl bg-[#1c1c1c] w-[25%] h-10 cursor-pointer overflow-hidden md:w-[20%] md:top-4 lg:w-[12%]';
+    ? 'absolute z-30 right-5 top-2 flex flex-col justify-center items-center gap-4 p-1 rounded-xl bg-[#1c1c1c] w-[25%] h-42 cursor-pointer overflow-hidden md:w-[20%] md:top-4 lg:w-[12%]'
+    : 'absolute z-30 right-5 top-2 flex flex-col justify-center items-center gap-4 p-1 rounded-xl bg-[#1c1c1c] w-[25%] h-10 cursor-pointer overflow-hidden md:w-[20%] md:top-4 lg:w-[12%]';
 
 
   return (
