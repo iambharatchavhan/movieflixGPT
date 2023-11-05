@@ -1,18 +1,26 @@
 import React from 'react'
-import MovieList from './MovieList'
 import {useSelector} from 'react-redux'
+import MovieList from './MovieList'
 
 const SecondMovieContainer = () => {
   const movieList = useSelector(store => store.movies.nowPlayingMovie)
-  // console.log(movieList)
+  const popularMovies = useSelector(store => store.movies.popularMovies)
+  const topMoviesList = useSelector(store => store.movies.topMovies)
+  const upcomingMoviesList = useSelector(store => store.movies.upcomingMovies)
+
+
+
+  //  console.log("now",topMoviesList);
+  //  console.log("popular",upcomingMoviesList);
   return (
     <>
-   {movieList && <div className=' bg-black text-white lg:-mt-72'>
-      <MovieList title={"Now Playing Movies"} movies={movieList}/>
-      <MovieList title={"Popular"} movies={movieList}/>
-      <MovieList title={"Upcoming"} movies={movieList}/>
-      <MovieList title={"Top Rated"} movies={movieList}/>
-    </div>} 
+    <div className=' bg-black text-white lg:-mt-72'>
+  {upcomingMoviesList && (<MovieList title={"Upcoming Movies"} movies={upcomingMoviesList}/>)}
+  {movieList && (<MovieList title={"Now Playing Movies"} movies={movieList}/>)}
+  {topMoviesList && (<MovieList title={"Top Rated Movies"} movies={topMoviesList}/>)}
+  {popularMovies && (<MovieList title={"Popular Movies"} movies={popularMovies}/>)}
+     
+    </div>
     </>
   )
  

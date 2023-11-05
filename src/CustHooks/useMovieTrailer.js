@@ -1,6 +1,6 @@
 import React ,{useEffect}from "react";
 import { useDispatch } from "react-redux";
-import { addMovieTrailer } from "./nowPlayingSlice";
+import { addMovieTrailer } from "../utils/nowPlayingSlice";
 
 const useMovieTrailer =(id,options)=>{
     const dispatch = useDispatch()

@@ -6,10 +6,14 @@ import {ChevronRight} from 'lucide-react'
 
 const MovieList = ({title,movies}) => {
     
-    // console.log(title,movies);
+// console.log(movies)
+   
+ 
 
   return (
-    <div className="p-2 bg-transparent z-50 md:relative md:px-6">
+    <>
+    {!movies && (<h1>Something Went wrong</h1>)}
+<div className="p-2 bg-transparent z-50 md:relative md:px-6">
     <div className='flex justify-between  lg:p-2'>
     <h1 className='font-semibold text-sm md:text-xl'>{title}</h1>
     <ChevronRight className='cursor-pointer' />
@@ -28,7 +32,10 @@ const MovieList = ({title,movies}) => {
       </div>
     </div>
     </div>
+    </>
+
   )
+
 }
 
 export default MovieList

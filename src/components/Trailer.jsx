@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React, {} from "react";
 import { API_OPTIONS } from "../utils/constant";
-import { useDispatch, useSelector } from "react-redux";
-import useMovieTrailer from "../utils/useMovieTrailer";
+import {  useSelector } from "react-redux";
+import useMovieTrailer from "../CustHooks/useMovieTrailer";
 
 const Trailer = ({ id }) => {
-  const dispatch = useDispatch();
+
   const trailerKey = useSelector((store) => store?.movies?.movieTrailer?.key);
   useMovieTrailer(id, API_OPTIONS);
   // console.log(trailerKey);
