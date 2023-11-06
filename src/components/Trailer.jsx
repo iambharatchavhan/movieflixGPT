@@ -10,14 +10,13 @@ const Trailer = ({ id }) => {
   // console.log(trailerKey);
   
   return (
-    <div className="text-white w-screen aspect-video overflow-hidden overflow-x-hidden">
+    <div className="relative w-[100%] pb-[9rem] border-2 border-red-900 md:pb-[20rem] lg:pb-[40rem]">
     
       <iframe
-        className=" w-full aspect-video "
-       
+        className="absolute top-0 left-0 w-[100%] h-[100%] border-0"
         src={"https://www.youtube.com/embed/" + trailerKey + "?autoplay=1&mute=1"}
         title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
        
       ></iframe>
     </div>

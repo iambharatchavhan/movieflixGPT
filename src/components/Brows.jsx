@@ -6,24 +6,28 @@ import useApiFetch from '../CustHooks/useFetchApi'
 import usePopularMovies from '../CustHooks/usePopularMovies';
 import useUpcomingMovies from '../CustHooks/useUpcomingMovies';
 import useTopMovies from '../CustHooks/useTopMovies';
-
+import GPTsearchPage from './GPTsearchPage';
+import { useSelector} from 'react-redux';
 
 
 
 
 const Brows = () => {
-  const {data, isLoading,error} = useApiFetch();
-  const {popularData,isLoadingPopular,errorPopular} = usePopularMovies();
-  const {topMoviesData} = useTopMovies();
-  const {upcomingData} = useUpcomingMovies();
+   useApiFetch();
+   usePopularMovies();
+   useTopMovies();
+   useUpcomingMovies();
+  const gptPageToggle = useSelector(store => store.gptToggle.gptToggle)
+
   return (
   
    <div className='bg-black h-screen'>
       <Header />
-      <div className='w-full'>
+      {gptPageToggle && <GPTsearchPage/>}
+      {!gptPageToggle && <div className='w-full'>
       <MainMovieContainer/>
      <SecondMovieContainer/>
-      </div>
+      </div>}
     </div>
   );
 };

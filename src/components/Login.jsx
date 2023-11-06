@@ -63,10 +63,11 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: username.current.value,
-            photoURL: {AVTAR},
+            photoURL: AVTAR,
           })
             .then(() => {
-              const { uid, email, displayName,photoURL } = auth.currentUser;
+              const { uid, email,displayName,photoURL } = auth.currentUser;
+             
               dispatch(
                 addUser({ uid: uid, email: email, displayName: displayName ,photoURL:photoURL })
               );
@@ -86,6 +87,7 @@ const Login = () => {
     SetErrorMsg(msg);
   };
 
+  
   return (
     <div className="bg-black text-white w-full h-screen  md:flex md:justify-center md:h-[200%] md:relative  md:backdrop-blur-md md:bg-white/30 ">
       <div className=" md:w-full md:h-full absolute bg-[#0000006b] z-10  "></div>
