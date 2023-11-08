@@ -24,8 +24,6 @@ const Header = () => {
   const user = useSelector(store => store.user);
   const gptPageToggle = useSelector(store => store.gptToggle.gptToggle)
 
-  // console.log(user)
-
   
 
   useEffect(()=>{
@@ -69,12 +67,12 @@ const Header = () => {
       />
     </div>
       { user && <>
-        <div className=" absolute right-56 top-4 z-50" onClick={handleGptPageToggle}>
-        <a href="#_" className="relative inline-flex items-center justify-center p-4 px-6 py-2 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-[1px] border-[#b9b9b990] rounded-md shadow-md group">
+        <div className=" absolute z-50 right-28 top-3 md:right-48 md:top-5 lg:right-56 lg:top-4 " onClick={handleGptPageToggle}>
+        <a href="#_" className="relative inline-flex items-center justify-center p-2 px-3 py-1 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out shadow-md group md:p-1 md:px-4 md:py-1 rounded-md  md:border-[1px] md:border-[#b9b9b990]  lg:p-4 lg:px-6 lg:py-2">
         <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-[#1C1C1C] group-hover:translate-x-0 ease">
        { !gptPageToggle ? <MoveRight strokeWidth={1} /> : <MoveLeft strokeWidth={1} />}
         </span>
-        <span className="absolute flex items-center justify-center w-full h-full text-white transition-all duration-300 transform group-hover:translate-x-full ease"> {!gptPageToggle ? "GPT Search" : "Home"}</span>
+        <span className="absolute flex items-center justify-center w-full h-full text-white text-[10px] transition-all duration-300 transform group-hover:translate-x-full ease md:text-[13px] lg:text-[16px]"> {!gptPageToggle ? "GPT Search" : "Home"}</span>
         <span className="relative invisible">GPT Search</span>
       </a>
         </div>h

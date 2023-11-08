@@ -15,10 +15,10 @@ const SecondMovieContainer = () => {
   return (
     <>
     <div className=' bg-black text-white lg:-mt-72'>
-  {upcomingMoviesList && (<MovieList title={"Upcoming Movies"} movies={upcomingMoviesList}/>)}
-  {movieList && (<MovieList title={"Now Playing Movies"} movies={movieList}/>)}
-  {topMoviesList && (<MovieList title={"Top Rated Movies"} movies={topMoviesList}/>)}
-  {popularMovies && (<MovieList title={"Popular Movies"} movies={popularMovies}/>)}
+  {upcomingMoviesList && (<MovieList title={"Upcoming Movies"} move={"upcoming"} movies={upcomingMoviesList}/>)}
+  {movieList && (<MovieList title={"Now Playing Movies"} move={"nowPlaying"} movies={movieList}/>)}
+  {topMoviesList && (<MovieList title={"Top Rated Movies"} move={"top"} movies={topMoviesList}/>)}
+  {popularMovies && (<MovieList title={"Popular Movies"} move={"popular"} movies={popularMovies}/>)}
      
     </div>
     </>

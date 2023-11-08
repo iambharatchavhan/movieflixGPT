@@ -4,10 +4,10 @@ import {ChevronRight} from 'lucide-react'
 
 
 
-const MovieList = ({title,movies}) => {
-    
-// console.log(movies)
-   
+
+const MovieList = ({title,movies,move}) => {
+
+ 
  
 
   return (
@@ -16,7 +16,7 @@ const MovieList = ({title,movies}) => {
 <div className="p-2 bg-transparent z-50 md:relative md:px-6">
     <div className='flex justify-between  lg:p-2'>
     <h1 className='font-semibold text-sm md:text-xl'>{title}</h1>
-    <ChevronRight className='cursor-pointer' />
+     <ChevronRight className='cursor-pointer' />
 
     </div>
     

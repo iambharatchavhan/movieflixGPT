@@ -2,6 +2,8 @@ import React from 'react'
 import Login from './Login'
 import Brows from './Brows'
 import Error from './Error'
+import PopularPage from './PopularPage'
+
 import { createBrowserRouter,RouterProvider} from 'react-router-dom'
 
 
@@ -12,16 +14,21 @@ const Body = () => {
     const appRouter = createBrowserRouter([
         {
             path:"/",
-            element:<Login/>
+            element:<Login/>,
+            errorElement:<Error/>
+
+            
         },
         {
-            path:"/brows",
-            element:<Brows/>
+          path:"/brows",
+          element:<Brows/>
         },
-        {
-          path:"/error",
-          element:<Error/>
-      }
+       
+      
+      
+      
+      
+      
     ])
 
 
