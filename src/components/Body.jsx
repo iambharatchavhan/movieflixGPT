@@ -3,6 +3,9 @@ import Login from './Login'
 import Brows from './Brows'
 import Error from './Error'
 import PopularPage from './PopularPage'
+import TopPage from './TopPage'
+import UpComingPage from './UpComingPage'
+import NowPlayingPage from './NowPlayingPage'
 
 import { createBrowserRouter,RouterProvider} from 'react-router-dom'
 
@@ -24,7 +27,11 @@ const Body = () => {
           element:<Brows/>
         },
        
-      
+        {
+          path:"/brows/popular",
+          element:<PopularPage/>
+        },
+       
       
       
       

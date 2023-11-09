@@ -6,7 +6,7 @@ const MovieCard = (props) => {
     const {poster_path,title} = props.props
    
   return (
-    <div>
+    <div className='w-[200px] h-[300px]'>
       <img src={POSTER + poster_path} alt={title} className='cursor-pointer rounded-lg hover:scale-110 transition duration-500'/>
     </div>
   )
