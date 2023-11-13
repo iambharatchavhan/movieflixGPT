@@ -6,6 +6,7 @@ import PopularPage from './PopularPage'
 import TopPage from './TopPage'
 import UpComingPage from './UpComingPage'
 import NowPlayingPage from './NowPlayingPage'
+import MovieDetails from './MovieDetails'
 
 import { createBrowserRouter,RouterProvider} from 'react-router-dom'
 
@@ -18,9 +19,7 @@ const Body = () => {
         {
             path:"/",
             element:<Login/>,
-            errorElement:<Error/>
-
-            
+            errorElement:<Error/>   
         },
         {
           path:"/brows",
@@ -30,6 +29,23 @@ const Body = () => {
         {
           path:"/brows/popular",
           element:<PopularPage/>
+        },
+        {
+          path:"/brows/top",
+          element:<TopPage/>
+        },
+        {
+          path:"/brows/upcoming",
+          element:<UpComingPage/>
+        },
+        {
+          path:"/brows/nowplaying",
+          element:<NowPlayingPage/>
+        },
+
+        {
+          path:"/brows/:id",
+          element:<MovieDetails/>
         },
        
       

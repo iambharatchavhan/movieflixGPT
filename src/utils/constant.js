@@ -12,6 +12,8 @@ export const POPULAR_API = 'https://api.themoviedb.org/3/movie/popular?language=
 export const TOP_RATED_API = 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1'
 export const UPCOMING_API ='https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1'
 export const AVTAR = "https://wallpapers.com/images/high/netflix-profile-pictures-1000-x-1000-2fg93funipvqfs9i.webp"
+export const MOVIE_DETAILS_API = 'https://api.themoviedb.org/3/movie/'
+
 
 export const POSTER = "https://image.tmdb.org/t/p/w500/"
 export const API_KEY= process.env.REACT_APP_API_KEY

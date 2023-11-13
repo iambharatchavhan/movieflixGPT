@@ -14,10 +14,10 @@ const SecondMovieContainer = () => {
   //  console.log("popular",upcomingMoviesList);
   return (
     <>
-    <div className=' bg-black text-white lg:-mt-72'>
-  {upcomingMoviesList && (<MovieList title={"Upcoming Movies"} move={"popular"} movies={upcomingMoviesList}/>)}
-  {movieList && (<MovieList title={"Now Playing Movies"} move={"popular"} movies={movieList}/>)}
-  {topMoviesList && (<MovieList title={"Top Rated Movies"} move={"popular"} movies={topMoviesList}/>)}
+    <div className=' bg-black text-white mt-14 lg:-mt-64'>
+  {upcomingMoviesList && (<MovieList title={"Upcoming Movies"} move={"upcoming"} movies={upcomingMoviesList}/>)}
+  {movieList && (<MovieList title={"Now Playing Movies"} move={"nowplaying"} movies={movieList}/>)}
+  {topMoviesList && (<MovieList title={"Top Rated Movies"} move={"top"} movies={topMoviesList}/>)}
   {popularMovies && (<MovieList title={"Popular Movies"} move={"popular"} movies={popularMovies}/>)}  
     </div>
     </>

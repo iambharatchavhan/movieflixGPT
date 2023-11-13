@@ -59,7 +59,7 @@ const Header = () => {
 
     
   <>
-    <div className="absolute z-20 flex justify-between bg-transparent">
+    <div className="absolute top-[10px] z-20 flex justify-between bg-transparent">
       <img
         src={IMG_LOGO}
         alt=""
@@ -75,7 +75,7 @@ const Header = () => {
         <span className="absolute flex items-center justify-center w-full h-full text-white text-[10px] transition-all duration-300 transform group-hover:translate-x-full ease md:text-[13px] lg:text-[16px]"> {!gptPageToggle ? "GPT Search" : "Home"}</span>
         <span className="relative invisible">GPT Search</span>
       </a>
-        </div>h
+        </div>
 
         <div
         className={containerClass}
