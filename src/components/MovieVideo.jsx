@@ -1,13 +1,13 @@
 import React from 'react'
 import { POSTER } from '../utils/constant';
+import { Languages } from 'lucide-react';
 
 const MovieVideo = ({videoKey,details}) => {
     // console.log(videoKey);
     const {
-        backdrop_path,
+      
         original_title,
         status,
-        belongs_to_collection,
         production_companies,
         runtime,
         spoken_languages,
@@ -21,11 +21,8 @@ const MovieVideo = ({videoKey,details}) => {
         return { hours, minutes };
       }
       const hrMn = toHoursAndMinutes(runtime) 
-      console.log(hrMn.hours);
-      console.log(hrMn.minutes);
 
-     
-    
+      
     
   return (
     <>
@@ -47,11 +44,20 @@ const MovieVideo = ({videoKey,details}) => {
  
   </div>
     </div>
-    <div>
-    <div>
-    <p className='text-xl'>Status : <span className='text-[16px] text-[#FFC107] border-[1px] border-[#FFC107] rounded-sm px-1'>{status ? "On Screen Now" : "coming Soon"}</span> </p>
-    <p className='text-xl'>Runtime : <span className='text-[16px] text-[#FFC107] border-[1px] border-[#FFC107] rounded-sm px-1'>{hrMn.hours }H {hrMn.minutes}m</span> </p>
+    <div className='pl-10' >
+    <div className='flex gap-[32rem]'>
+    <div className='p-2'>
+    <h1 className='text-xl my-2'>Movie Title: <span className='border-[1px] border-[#FFC107] text-[#FFC107] px-2 rounded-sm'>{original_title}</span></h1>
+    <h1 className='text-xl'> Languages: {(spoken_languages && spoken_languages.map((lang)=>(
+      <span  className='border-[1px] border-[#FFC107] text-[#FFC107] px-2 rounded-sm mx-2' key={lang.name}>{lang?.english_name ? lang?.english_name : lang.name }</span>
+    )))}</h1>
+    </div>
+    
+    <div className='p-2'>
+    <p className='text-xl my-2'>Status : <span className='text-[16px] text-[#FFC107] border-[1px] border-[#FFC107] rounded-sm px-1'>{status ? "On Screen Now" : "coming Soon"}</span> </p>
+    <p className='text-xl my-2'>Runtime : <span className='text-[16px] text-[#FFC107] border-[1px] border-[#FFC107] rounded-sm px-1'>{hrMn.hours }H {hrMn.minutes}m</span> </p>
   
+    </div>
     </div>
     <div className='flex justify-start items-center gap-2'>
     <p className='text-xl'>Production Companies : </p>

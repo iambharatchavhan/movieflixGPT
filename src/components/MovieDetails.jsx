@@ -8,16 +8,24 @@ import useMovieVideo from '../CustHooks/useMovieVideo'
 import useMovieInformation from '../CustHooks/useMovieInformation'
 import { MoveLeft } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
+import useCastDetails from '../CustHooks/useCastDetails'
+import CastDetails from './CastDetails'
+import CrewPage from './Crewpage'
 
 const MovieDetails = () => {
     const navigate = useNavigate()
     const {id }= useParams() 
     useMovieVideo(id, API_OPTIONS);
     useMovieInformation(id,API_OPTIONS)
+    useCastDetails(id, API_OPTIONS)
     const movieClip = useSelector((store) => store?.movies?.movieVideo?.key);
     const movieDetails = useSelector((store) => store?.movies?.movieDetails);
+    const castAndCrew= useSelector((store) => store?.movies?.castDetails);
     if(!movieDetails) return null
-  
+    if(!castAndCrew) return null
+//  console.log(castAndCrew);
+  // console.log(castAndCrew);
+
    const  handlePageNavigate =()=>{
     navigate("/brows")
    }
@@ -37,7 +45,8 @@ const MovieDetails = () => {
     </div>
        <MovieInformation details={movieDetails}/>
        <MovieVideo videoKey={movieClip} details={movieDetails}/>
-    
+      {castAndCrew.cast ? <CastDetails cast={castAndCrew.cast} crew={castAndCrew.crew}/> : <h1>Cast Details not Found</h1>}
+       { castAndCrew.crew ? <CrewPage crew={castAndCrew.crew}/> : <h1>Crew Details Not Found </h1>}
     </div>
   )
 }

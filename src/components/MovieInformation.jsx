@@ -14,12 +14,12 @@ const MovieInformation = (details) => {
     poster_path,
     release_date,
     revenue,
-    runtime,
+  
     tagline,
     vote_average,
     genres,
-    production_countries,
-    spoken_languages,
+  
+   
   } = details.details;
  const isPoster = belongs_to_collection?.backdrop_path ? belongs_to_collection?.backdrop_path : backdrop_path;
   const posterUrl = POSTER + isPoster;
