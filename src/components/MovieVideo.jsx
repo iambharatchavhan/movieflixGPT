@@ -59,7 +59,7 @@ const MovieVideo = ({videoKey,details}) => {
   
     </div>
     </div>
-    <div className='flex justify-start items-center gap-2'>
+    <div className='flex justify-start items-center gap-2 mb-4'>
     <p className='text-xl'>Production Companies : </p>
     {production_companies && (<div className='flex flex-wrap gap-2 '>
     {production_companies.map((logo)=>(

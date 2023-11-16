@@ -14,7 +14,6 @@ const MovieInformation = (details) => {
     poster_path,
     release_date,
     revenue,
-  
     tagline,
     vote_average,
     genres,
@@ -40,7 +39,7 @@ const MovieInformation = (details) => {
               <div>
                 <h1 className="text-3xl font-semibold">{original_title}</h1>
                 <p className="text-[12px] text-[#d7d7d7] mb-2">{tagline}</p>
-                <p className=" rounded-md text-[#FFC107] mb-2 ">
+                <p className=" rounded-md text-[] mb-2 ">
                   <span className="bg-[#1c1c1c] px-1 rounded-sm">
                     {release_date}
                   </span>
