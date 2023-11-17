@@ -44,7 +44,8 @@ const MovieDetails = () => {
   </a>
     </div>
        <MovieInformation details={movieDetails}/>
-       <MovieVideo videoKey={movieClip} details={movieDetails}/>
+    <MovieVideo videoKey={movieClip} details={movieDetails}/>
+  
        {castAndCrew ? <CrewPage crew={castAndCrew.crew} cast={castAndCrew.cast}/> : <h1>Crew Details Not Found </h1>}
     </div>
   )

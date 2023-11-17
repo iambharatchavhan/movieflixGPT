@@ -8,12 +8,12 @@ const CastDetails = (props) => {
   console.log(crew);
 
   return (
-    <div className='p-10 flex flex-wrap gap-20'>
+    <div className='border-2 py-4 flex flex-col gap-2 justify-center items-center md:p-10 md:flex md:flex-row md:flex-wrap md:gap-12 lg:items-start lg:justify-start'>
       {cast.length ? (
         // Render cast details if there is cast data
         cast.map((worker, i) => (
           <div
-            className='border-2 border-[#FFC107] relative w-[290px] h-[65px] rounded-e-full flex flex-col justify-center items-start py-2 pl-10 left-8 bg-[#1c1c1c]'
+            className='w-[230px] h-[65px] border-2 border-[#FFC107] relative  rounded-e-full flex flex-col justify-center items-start py-2 pl-10 left-8 bg-[#1c1c1c] md:w-[290px] md:h-[65px]'
             key={i}
           >
             <p>{worker.original_name}</p>
@@ -38,7 +38,7 @@ const CastDetails = (props) => {
         // Render crew details if there is crew data
         crew.map((crewMember, i) => (
           <div
-          className='border-[1px] border-[#FFC107] relative w-[290px] h-[65px] rounded-e-full flex flex-col justify-center items-start py-2 pl-10 left-8 bg-[#1c1c1c]'
+          className=' w-[230px] h-[65px] border-[1px] border-[#FFC107] relative rounded-e-full flex flex-col justify-center items-start py-2 pl-10 left-8 bg-[#1c1c1c] md:w-[290px] md:h-[65px] '
           key={i}
         >
           <p>{ crewMember.job}</p>

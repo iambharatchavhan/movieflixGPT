@@ -8,6 +8,7 @@ import UpComingPage from './UpComingPage'
 import NowPlayingPage from './NowPlayingPage'
 import MovieDetails from './MovieDetails'
 
+
 import { createBrowserRouter,RouterProvider} from 'react-router-dom'
 
 
@@ -60,6 +61,7 @@ const Body = () => {
 
   return (
     <div className='dark:bg-black'>
+      
       <RouterProvider router = {appRouter}/>
     </div>
   )
