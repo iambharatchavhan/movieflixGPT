@@ -23,8 +23,7 @@ const MovieDetails = () => {
     const castAndCrew= useSelector((store) => store?.movies?.castDetails);
     if(!movieDetails) return null
     if(!castAndCrew) return null
-//  console.log(castAndCrew);
-  // console.log(castAndCrew);
+
 
    const  handlePageNavigate =()=>{
     navigate("/brows")

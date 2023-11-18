@@ -7,7 +7,6 @@ const Trailer = ({ id }) => {
 
   const trailerKey = useSelector((store) => store?.movies?.movieTrailer?.key);
   useMovieTrailer(id, API_OPTIONS);
-  // console.log(trailerKey);
   
   return (
     <div className="relative w-[100%] pb-[56.25%] overflow-hidden">

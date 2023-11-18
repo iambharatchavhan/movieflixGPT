@@ -3,7 +3,7 @@ import { POSTER } from '../utils/constant'
 import { useNavigate } from 'react-router-dom'
 
 const MovieCard = (props) => {
-    // console.log(props)
+
     const navigate = useNavigate()
     const {poster_path,title ,id} = props.props
    
@@ -11,7 +11,7 @@ const MovieCard = (props) => {
         navigate("/brows/"+ id)
     }
 
-    // console.log(id)
+
    
   return (
     <div className='w-[95px] h-[150px]   md:w-[150px] md:h-[200px] md:my-3    lg:w-[200px] lg:h-[300px]' onClick={handleMovieId}>

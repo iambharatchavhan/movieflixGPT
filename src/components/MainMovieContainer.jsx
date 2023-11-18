@@ -7,9 +7,8 @@ const MainMovieContainer = () => {
   const movie = useSelector((store) => store.movies?.nowPlayingMovie);
   if (!movie){return}
 
-  const trailerMovie = movie[10];
+  const trailerMovie = movie[4];
   const {poster_path,overview,id} = trailerMovie;
-  // console.log(trailerMovie)
 
   return (
     <div className="overflow-x-hidden -mt-7">

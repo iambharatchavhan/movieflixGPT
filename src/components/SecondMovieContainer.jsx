@@ -10,8 +10,6 @@ const SecondMovieContainer = () => {
 
 
 
-  //  console.log("now",topMoviesList);
-  //  console.log("popular",upcomingMoviesList);
   return (
     <>
     <div className=' bg-black text-white mt-14 lg:-mt-64'>

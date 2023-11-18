@@ -31,8 +31,7 @@ const CrewPage = ({ crew, cast }) => {
     }
   }, [selectedType, crew]);
 
-  // console.log("filetr",filteredData);
-  // console.log("cast", castData);
+
   const castNav = [ "Production", "Crew","Costume & Make-Up", "Writing","Art", "Camera", "Sound",];
 
   return (

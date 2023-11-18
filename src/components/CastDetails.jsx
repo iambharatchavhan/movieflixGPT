@@ -5,10 +5,10 @@ import { POSTER } from '../utils/constant';
 const CastDetails = (props) => {
   const { cast, crew } = props;
 
-  console.log(crew);
+  
 
   return (
-    <div className='border-2 py-4 flex flex-col gap-2 justify-center items-center md:p-10 md:flex md:flex-row md:flex-wrap md:gap-12 lg:items-start lg:justify-start'>
+    <div className='py-4 flex flex-col gap-2 justify-center items-center md:p-10 md:flex md:flex-row md:flex-wrap md:gap-12 lg:items-start lg:justify-start'>
       {cast.length ? (
         // Render cast details if there is cast data
         cast.map((worker, i) => (

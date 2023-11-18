@@ -17,7 +17,7 @@ const apiSearchMessage = await openai.chat.completions.create({
   model: 'gpt-3.5-turbo',
 });
 
-console.log(apiSearchMessage)
+
 }
 
 
@@ -31,8 +31,8 @@ console.log(apiSearchMessage)
      <p className='text-[10px] text-[#484848]'>Powered By Open Ai</p>
      </div>
       <form  className='w-full flex justify-center items-center py-2 relative ' onSubmit={e => e.preventDefault()}>
-        <input type='text' placeholder='What do you want watch today ?' className='px-16 py-3 rounded-full bg-[#1C1C1C] outline-none w-1/3 ' ref={searchText}/>
-        <button className='absolute left-[63%] text-red-700 hover:scale-[1.2] ' onClick={handleGPTsearch}><Search/></button>
+        <input type='text' placeholder='What do you want watch today ?' className='px-16 py-3 rounded-full bg-[#1C1C1C] outline-none w-[90%] md:w-[70%] lg:w-1/3 ' ref={searchText}/>
+        <button className='absolute left-[82%]  text-red-700 hover:scale-[1.2]  md:left-[80%]  lg:left-[63%]' onClick={handleGPTsearch}><Search/></button>
     
       </form>
     </div>

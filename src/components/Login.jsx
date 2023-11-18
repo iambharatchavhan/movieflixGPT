@@ -26,8 +26,7 @@ const Login = () => {
   };
 
   const handleOnSignButton = () => {
-    // console.log(email.current.value)
-    // console.log(password.current.value)
+  
 
     let msg;
     if (isSignIn) {

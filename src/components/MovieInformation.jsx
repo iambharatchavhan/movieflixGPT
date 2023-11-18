@@ -3,7 +3,7 @@ import { POSTER } from "../utils/constant";
 import { Heart, Star, Flame ,CircleDollarSign} from "lucide-react";
 
 const MovieInformation = (details) => {
-  // console.log(details.details)
+ 
 
   const {
     belongs_to_collection,
@@ -22,7 +22,6 @@ const MovieInformation = (details) => {
   } = details.details;
  const isPoster = belongs_to_collection?.backdrop_path ? belongs_to_collection?.backdrop_path : backdrop_path;
   const posterUrl = POSTER + isPoster;
-    // console.log(posterUrl,imgVal);
   return (
     <>
       <div className=" flex justify-center items-center w-full lg:h-screen">
@@ -73,7 +72,7 @@ const MovieInformation = (details) => {
           </div>
 
           <div className="overflow-hidden relative z-10">
-            <span className="absolute w-full shadow-[0px_10px_90px_100px_#000] lg:shadow-[-10px_0px_200px_300px_#1c1c1c]  lg:w-0"></span>
+            <span className="absolute w-full shadow-[0px_10px_90px_100px_#000] lg:shadow-[-10px_0px_200px_300px_#1c1c1c] lg:h-full lg:w-0"></span>
        
               <img
                 src={posterUrl}

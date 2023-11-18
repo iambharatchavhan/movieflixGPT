@@ -3,7 +3,7 @@ import { POSTER } from '../utils/constant';
 import { Languages } from 'lucide-react';
 
 const MovieVideo = ({videoKey,details}) => {
-    // console.log(videoKey);
+    
     const {
       
         original_title,
